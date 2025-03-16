@@ -1,71 +1,75 @@
-# Learning Journey
+# Learning Journey App
 
-A simple web application for documenting learning goals, tasks, and progress. Users can create goals, add tasks, and document their progress with comments that are automatically timestamped.
+A simple application to track learning goals, add tasks, and interact with comments in a Twitter-like social interface.
 
 ## Features
 
-- Create learning goals with descriptions
-- Add tasks to each goal
-- Mark tasks as complete
-- Add comments to tasks with automatic timestamps
-- Track your learning progress over time
+- Create and track learning goals
+- Add tasks to goals and mark them as complete
+- Comment on tasks with a Twitter-like interface
+- Reply to comments
+- Like goals and comments
+- Explore public goals from other users
+- View trending goals
 
-## Tech Stack
-
-- **Frontend**: Next.js, React, TypeScript
-- **Styling**: Custom CSS
-- **Date Formatting**: date-fns
-
-## Getting Started
+## Running with Docker
 
 ### Prerequisites
 
-- Node.js 14.x or later
-- npm or yarn
+- Docker and Docker Compose installed on your machine
 
-### Installation
+### Building and Running the Container
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/simple-roadmap.git
+   git clone <repository-url>
    cd simple-roadmap
    ```
 
-2. Install dependencies:
+2. Build and start the container:
+   ```bash
+   docker-compose up -d
+   ```
+
+3. Access the application at http://localhost:3000
+
+### Building the Docker Image Manually
+
+If you prefer to build and run the Docker image manually:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t learning-journey .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 3000:3000 learning-journey
+   ```
+
+3. Access the application at http://localhost:3000
+
+## Development
+
+### Prerequisites
+
+- Node.js 18 or later
+- npm or yarn
+
+### Running Locally
+
+1. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-3. Run the development server:
+2. Start the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
-
-## Usage
-
-1. **Create a Goal**: On the home page, click "Add Goal" to create a new learning goal.
-2. **Add Tasks**: Click on a goal to view its details, then add tasks using the form.
-3. **Track Progress**: Mark tasks as complete by checking the checkbox.
-4. **Add Comments**: Click "Add Comment" on any task to document your progress or add notes.
-
-## Project Structure
-
-- `/src/pages` - Next.js pages
-- `/src/components` - React components
-- `/src/types` - TypeScript type definitions
-- `/src/data` - Sample data and data management functions
-- `/src/styles` - Global styles
-
-## Data Storage
-
-This application currently uses in-memory storage for demonstration purposes. In a production environment, you would want to connect it to a database or API for persistent storage.
+3. Access the application at http://localhost:3000
 
 ## License
 
-This project is licensed under the MIT License. 
+MIT 
